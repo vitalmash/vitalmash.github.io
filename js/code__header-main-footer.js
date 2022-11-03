@@ -48,7 +48,7 @@ window.onload = ()=> {
 
     function changeIndicator(type) {
         let index, header__linksCoords, linkContentCoords, linkContentPosition;
-        if (window.location.pathname == 'index.html') index = 0;
+        if (window.location.pathname == 'index.html' || window.location.pathname == '') index = 0;
         else if (window.location.pathname == 'producto/index.html') index = 1;
         else if (window.location.pathname == 'blog/index.html') index = 2;
         else index = 3;
