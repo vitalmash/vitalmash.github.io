@@ -19,10 +19,6 @@
 
 /* MAIN */
 
-.content-section {
-    padding: 25px 50px;
-}
-
 .content-section:first-child {
     padding: 80px 50px 0px; 
 }
@@ -40,14 +36,24 @@
 
 .content-section:nth-child(3) {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: 10%;
+    padding: 50px;
 }
 
 .content-section:nth-child(3) img {
-    width: 200px;
-    height: 200px;
+    min-width: 100px;
+    max-width: 300px;
+}
+
+.content-section:nth-child(3) img:first-child {
+    margin-bottom: 12%;
+}
+
+.content-section:nth-child(3) img:last-child {
+    margin-top: 12%;
 }
 
 .content-section:last-child {
@@ -84,7 +90,7 @@
 
 .content-section__image {
     width: 45%;
-    border-radius: 100px;
+    border-radius: 300px;
     overflow: hidden;
 }
 
@@ -94,6 +100,74 @@
     object-fit: cover;
 }
 
-@media screen AND (max-width: ) {
+@media screen AND (max-width: 768px) {
     
+    .content-section:first-child {
+        padding: 80px 50px 0px; 
+    }
+    
+    .content-section:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 20% 50px 50px;
+        background-image: url("../img/edges/first-change-inicio.svg");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: 110%;
+    }
+    
+    .content-section:nth-child(3) {
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+    
+    .content-section:nth-child(3) img {
+        min-width: 100px;
+        max-width: 300px;
+    }
+    
+    .content-section:nth-child(3) img:first-child {
+        margin-bottom: 0%;
+    }
+    
+    .content-section:nth-child(3) img:last-child {
+        margin-top: 0%;
+    }
+    
+    .content-section:last-child {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 50px;
+        background-color: var(--darkColor20);;
+    }
+    
+    .content-section__info {
+        width: 100%;
+    }
+        
+    .content-section__image {
+        width: 85%;
+        border-radius: 200px;
+        overflow: hidden;
+    }
+    
+}
+
+@media screen AND (max-width: 425px) {
+
+    .content-section__image {
+        width: 100%;
+    }
+
+    .content-section:nth-child(2) {
+        padding: 25% 50px 50px;
+    }
+
+
 }
