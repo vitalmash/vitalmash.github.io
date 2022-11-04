@@ -5,6 +5,8 @@ window.onload = ()=> {
     const linkContent = document.querySelectorAll(".link-content");
     const header__indicator = document.querySelector(".header__indicator");
     const main = document.getElementById("main");
+    const footer__divline = document.querySelector(".footer__divline");
+
 
     const header__burgerMenu = document.createElement("DIV");
     header__burgerMenu.classList.add("header__burgerMenu");
@@ -20,21 +22,22 @@ window.onload = ()=> {
     });
 
     function changeOnResizeOnload() {
-        changeHeader();
+        changeOnHeader();
+        changeOnFooter();
     }
 
-    function changeHeader() {
+    function changeOnHeader() {
         if (document.documentElement.scrollWidth <= 768) {
             checkBurgerMenu();
             header.replaceChild(header__burgerMenu, header__nav);
             document.body.insertBefore(header__nav, main);
-            changeIndicator('tablet');
+            changeOnIndicator('tablet');
         } else if (header.contains(header__burgerMenu)) {
             header__nav.style.visibility = `visible`;
             header.replaceChild(header__nav,header__burgerMenu);
-            changeIndicator('laptop');
+            changeOnIndicator('laptop');
         } else {
-            changeIndicator('laptop');
+            changeOnIndicator('laptop');
         }
     }
 
@@ -46,7 +49,7 @@ window.onload = ()=> {
         }
     }
 
-    function changeIndicator(type) {
+    function changeOnIndicator(type) {
         let index, header__linksCoords, linkContentCoords, linkContentPosition;
         if (window.location.pathname == 'index.html' || window.location.pathname == '/') index = 0;
         else if (window.location.pathname == 'producto/index.html') index = 1;
@@ -70,7 +73,23 @@ window.onload = ()=> {
             margin-top: ${linkContentPosition}px;
         `;
         }
-        
+    }
+
+    function changeOnFooter() {
+        if (document.documentElement.scrollWidth > 768) {
+            if (!footer__divline.classList.contains("vertical-line") && !footer__divline.classList.contains("horizontal-line")) {
+                footer__divline.classList.add("vertical-line");
+            } else {
+                footer__divline.classList.replace("horizontal-line","vertical-line");
+            }
+        } else {
+            if (!footer__divline.classList.contains("vertical-line") && !footer__divline.classList.contains("horizontal-line")) {
+                footer__divline.classList.add("horizontal-line");
+            } else {
+                footer__divline.classList.replace("vertical-line","horizontal-line");
+            }
+        }
+
     }
 
 }
