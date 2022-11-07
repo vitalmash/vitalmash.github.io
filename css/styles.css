@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     gap: 5%;
-    padding: 80px 50px 0px;
+    padding: 80px 7% 0px;
 }
 
 .content-section:first-child img {
@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
-    padding: 12.5% 100px 15%;
+    padding: 12.5% 7% 15%;
     background-image: url("../img/edges/first-inicio.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,7 +49,7 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
-    padding: 25px 100px;
+    padding: 25px 7%;
 }
 
 .content-section:nth-child(3) img {
@@ -72,7 +72,7 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
-    padding: 13.5% 100px;
+    padding: 13.5% 7%;
     background-image: url("../img/edges/second-inicio.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -114,7 +114,7 @@
     
     .content-section:first-child {
         flex-wrap: wrap-reverse;
-        padding: 50px 50px 0px;
+        padding: 50px 7% 0px;
         gap: 50px;
     }
 
@@ -129,7 +129,7 @@
         justify-content: center;
         align-items: center;
         gap: 50px;
-        padding: 20% 50px 50px;
+        padding: 20% 7% 50px;
         background-image: url("../img/edges/first-change-inicio.svg");
         background-repeat: no-repeat;
         background-position-x: center;
@@ -139,7 +139,7 @@
     .content-section:nth-child(3) {
         flex-wrap: wrap;
         gap: 50px;
-        padding: 50px;
+        padding: 50px 7%;
     }
     
     .content-section:nth-child(3) img {
@@ -161,7 +161,7 @@
         justify-content: center;
         align-items: center;
         gap: 50px;
-        padding: 50px;
+        padding: 50px 7%;
         background-color: var(--darkColor20);;
     }
     
@@ -184,7 +184,7 @@
     }
 
     .content-section:nth-child(2) {
-        padding: 25% 50px 50px;
+        padding: 25% 7% 50px;
     }
 
 

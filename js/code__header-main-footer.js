@@ -12,26 +12,47 @@ window.onload = ()=> {
     header__burgerMenu.classList.add("header__burgerMenu");
     header__burgerMenu.innerHTML = `<i class="fi fi-br-menu-burger"></i>`;
     
+    // momentario
+    
+    const contentSection = document.querySelectorAll(".content-section");
+    const CS__picture = document.querySelectorAll(".content-section__picture");
+    const CS__nutrition = document.querySelector(".content-nutrition");
 
-    changeOnResizeOnload();
-    window.onresize = ()=>{changeOnResizeOnload()};
+    function changeContentSection() {
+        console.log(document.documentElement.scrollWidth)
+        if (document.documentElement.scrollWidth <=1024 && contentSection[1].childElementCount == 2) {
+            contentSection[1].removeChild(CS__picture[1]);
+        } 
+        if (document.documentElement.scrollWidth >1024 && !(contentSection[1].childElementCount == 2)) {
+            contentSection[1].insertBefore(CS__picture[1], CS__nutrition);
+        }
+    }
+
+    //
+
+    changeOnresizeOnload();
+    window.onresize = ()=>{changeOnresizeOnload()};
 
     header__burgerMenu.addEventListener('click', ()=> {
         header__burgerMenu.firstChild.classList.toggle("fi-br-x");
         checkBurgerMenu();
     });
 
-    function changeOnResizeOnload() {
+    function changeOnresizeOnload() {
         changeOnHeader();
         changeOnFooter();
+        //
+        changeContentSection();
     }
 
     function changeOnHeader() {
         if (document.documentElement.scrollWidth <= 768) {
             checkBurgerMenu();
-            header.replaceChild(header__burgerMenu, header__nav);
-            document.body.insertBefore(header__nav, main);
-            changeOnIndicator('tablet');
+            if (!header.contains(header__burgerMenu)) {
+                header.replaceChild(header__burgerMenu, header__nav);
+                document.body.insertBefore(header__nav, main);
+                changeOnIndicator('tablet');
+            }
         } else if (header.contains(header__burgerMenu)) {
             header__nav.style.visibility = `visible`;
             header.replaceChild(header__nav,header__burgerMenu);
@@ -89,6 +110,10 @@ window.onload = ()=> {
                 footer__divline.classList.replace("vertical-line","horizontal-line");
             }
         }
+
+    }
+
+    if (window.location.pathname == 'producto/index.html') {
 
     }
 
