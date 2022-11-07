@@ -19,7 +19,6 @@ window.onload = ()=> {
     const CS__nutrition = document.querySelector(".content-nutrition");
 
     function changeContentSection() {
-        console.log(document.documentElement.scrollWidth)
         if (document.documentElement.scrollWidth <=1024 && contentSection[1].childElementCount == 2) {
             contentSection[1].removeChild(CS__picture[1]);
         } 
@@ -72,9 +71,9 @@ window.onload = ()=> {
 
     function changeOnIndicator(type) {
         let index, header__linksCoords, linkContentCoords, linkContentPosition;
-        if (window.location.pathname == 'index.html' || window.location.pathname == '/') index = 0;
-        else if (window.location.pathname == 'producto/index.html') index = 1;
-        else if (window.location.pathname == 'blog/index.html') index = 2;
+        if (window.location.pathname == '/index.html' || window.location.pathname == '/') index = 0;
+        else if (window.location.pathname == '/producto/index.html') index = 1;
+        else if (window.location.pathname == '/blog/index.html') index = 2;
         else index = 3;
 
         header__linksCoords = header__links.getBoundingClientRect();
