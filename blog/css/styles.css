@@ -22,10 +22,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 400px;
+    height: 550px;
     background-image: url('../img/filingPictureOne.jpg');
     background-size: cover;
-    background-position-y: 55%;
+    background-position-y: 50%;
     background-position-x: center;
 }
 
@@ -64,6 +64,7 @@
     padding: 50px;
     border-radius: 10px;
     background: var(--middleColor20);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .block-news__type {
@@ -89,7 +90,25 @@
 }
 
 @media screen AND (max-width: 1024px) {
+
+    .content-section:first-child {
+        background-position-y: 10%;
+    }
+
     .content-section__news {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen AND (max-width: 768px) {
+    .content-section:first-child {
+        height: 400px;
+        background-position-y: 10%;
+    }
+}
+
+@media screen AND (max-width: 425px) {
+    .content-section:first-child {
+        height: 300px;
     }
 }
