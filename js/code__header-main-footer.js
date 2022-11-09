@@ -87,24 +87,24 @@ function changeOnIndicator(type) {
 
     if (type == 'laptop' && type != auxtype) {
         for (let i=0; i < header__links.childElementCount; i++) {
-            arrayGridColumns[i] = `${linkContent[i].clientWidth}px`;
+            // arrayGridColumns[i] = `${linkContent[i].clientWidth}px`;
             if (i == index) {barindicator[i].classList.add("indicator--active")}
             else {barindicator[i].classList.remove("indicator--active")}
         }
-        header__indicator.style = `
-            grid-template-columns: ${arrayGridColumns[0]} ${arrayGridColumns[1]} ${arrayGridColumns[2]} ${arrayGridColumns[3]};
-            `;
+        // header__indicator.style = `
+        //     grid-template-columns: ${arrayGridColumns[0]} ${arrayGridColumns[1]} ${arrayGridColumns[2]} ${arrayGridColumns[3]};
+        //     `;
 
         auxtype = type;
     } else if (type == 'tablet' && type != auxtype) {
         for (let i=0; i < header__links.childElementCount; i++) {
-            arrayGridRows[i] = `${linkContent[i].clientHeight}px`;
+            // arrayGridRows[i] = `${linkContent[i].clientHeight}px`;
             if (i == index) {barindicator[i].classList.add("indicator--active")}
             else {barindicator[i].classList.remove("indicator--active")}
         }
-        header__indicator.style = `
-            grid-template-rows: ${arrayGridRows[0]} ${arrayGridRows[1]} ${arrayGridRows[2]} ${arrayGridRows[3]};
-            `;
+        // header__indicator.style = `
+        //     grid-template-rows: ${arrayGridRows[0]} ${arrayGridRows[1]} ${arrayGridRows[2]} ${arrayGridRows[3]};
+        //     `;
 
         auxtype = type;
     }

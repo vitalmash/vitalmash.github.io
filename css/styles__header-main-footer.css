@@ -66,6 +66,7 @@
 
 .header__indicator {
     display: grid;
+    grid-template-columns: 75px 113px 71px 104px;
     grid-template-rows: 4px;
     justify-content: center;
     justify-items: center;
@@ -84,7 +85,7 @@
     width: 100%;
     border-radius: 5px 5px 0 0;
     background: var(--lightColor);
-    transition: width 1s;
+    transition: width .5s;
 }
 
 .header__burgerMenu {
@@ -192,6 +193,7 @@
     
     .header__indicator {
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(20px);
         gap: 15px;
         order: 1;
         padding: 25px 0;
@@ -207,7 +209,7 @@
         height: 100%;
         border-radius: 0 5px 5px 0;
         background: var(--lightColor);
-        transition: height 1s;
+        transition: height .5s;
     }
     /* FOOTER */
     
