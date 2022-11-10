@@ -25,14 +25,21 @@ header__burgerMenu.innerHTML = `<i class="fi fi-br-menu-burger"></i>`;
 changeOnresizeOnload();
 window.onresize = ()=>{changeOnresizeOnload()};
 
+window.addEventListener('scroll', ()=> {
+    if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
+        clickBurgerMenu();
+    }
+});
+
+
 header__burgerMenu.addEventListener('click', ()=> {
-    header__burgerMenu.firstChild.classList.toggle("fi-br-x");
-    header__burgerMenu.style = `
-        animation-name: rote360${countNumber%2 == 0 ? '' : '--reverse'};
-    `;
-    checkBurgerMenu();
-    switchStart = true;
-    countNumber++;
+    clickBurgerMenu();
+});
+
+main.addEventListener('click', ()=> {
+    if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
+        clickBurgerMenu();
+    }
 });
 
 function changeOnresizeOnload() {
@@ -83,6 +90,16 @@ function checkBurgerMenu() {
     } else if (switchStart) {
         header__nav.style = `animation-name: swipeCenter--reverse;`;
     }
+}
+
+function clickBurgerMenu() {
+    header__burgerMenu.firstChild.classList.toggle("fi-br-x");
+    header__burgerMenu.style = `
+        animation-name: rote360${countNumber%2 == 0 ? '' : '--reverse'};
+    `;
+    checkBurgerMenu();
+    switchStart = true;
+    countNumber++;
 }
 
 function changeOnIndicator(type) {
