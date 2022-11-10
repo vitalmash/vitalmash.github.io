@@ -40,7 +40,7 @@ function changeOnresizeOnload() {
 //
 
 function changeContentSection() {
-    if (document.documentElement.scrollWidth <=1024) {
+    if (window.innerWidth <= 1024) {
         if (contentSection[1].childElementCount == 2) {
             contentSection[1].removeChild(CS__picture[1]);
         }  
@@ -54,7 +54,7 @@ function changeContentSection() {
 //
 
 function changeOnHeader() {
-    if (document.documentElement.scrollWidth <= 768) {
+    if (window.innerWidth <= 768) {
         checkBurgerMenu();
         if (!header.contains(header__burgerMenu)) {
             header.replaceChild(header__burgerMenu, header__nav);
@@ -111,7 +111,7 @@ function changeOnIndicator(type) {
 }
 
 function changeOnFooter() {
-    if (document.documentElement.scrollWidth > 768) {
+    if (window.innerWidth > 768) {
         if (!footer__divline.classList.contains("vertical-line") && !footer__divline.classList.contains("horizontal-line")) {
             footer__divline.classList.add("vertical-line");
         } else {
