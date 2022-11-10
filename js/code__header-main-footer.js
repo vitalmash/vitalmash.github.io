@@ -1,3 +1,5 @@
+var switchStart = false, countNumber = 0;
+
 const header = document.getElementById("header");
 const header__nav = document.querySelector(".header__nav");
 const header__links = document.querySelector(".header__links");
@@ -25,7 +27,12 @@ window.onresize = ()=>{changeOnresizeOnload()};
 
 header__burgerMenu.addEventListener('click', ()=> {
     header__burgerMenu.firstChild.classList.toggle("fi-br-x");
+    header__burgerMenu.style = `
+        animation-name: rote360${countNumber%2 == 0 ? '' : '--reverse'};
+    `;
     checkBurgerMenu();
+    switchStart = true;
+    countNumber++;
 });
 
 function changeOnresizeOnload() {
@@ -62,7 +69,7 @@ function changeOnHeader() {
             changeOnIndicator('tablet');
         }
     } else if (header.contains(header__burgerMenu)) {
-        header__nav.style.visibility = `visible`;
+        header__nav.style = `animation-name: swipeCenter;`;
         header.replaceChild(header__nav,header__burgerMenu);
         changeOnIndicator('laptop');
     } else {
@@ -72,9 +79,9 @@ function changeOnHeader() {
 
 function checkBurgerMenu() {
     if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
-        header__nav.style.visibility = `visible`;
-    } else {
-        header__nav.style.visibility = `hidden`;
+        header__nav.style = `animation-name: swipeCenter;`;
+    } else if (switchStart) {
+        header__nav.style = `animation-name: swipeCenter--reverse;`;
     }
 }
 

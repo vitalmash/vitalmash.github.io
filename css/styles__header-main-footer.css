@@ -16,6 +16,64 @@
     --lightColor20: #EDD1D3;
 }
 
+/* KEYFRAMES */
+
+@keyframes swipeCenter {
+    from {
+        opacity: 0;
+        scale: 0;
+    }
+    
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes swipeCenter--reverse {
+    from {
+        opacity: 1;
+        scale: 1;
+    }
+    
+    to {
+        opacity: 0;
+        scale: .75;
+    }
+}
+
+@keyframes rote360 {
+    0% {
+        scale: 1;
+        rotate: 0;
+    }
+
+    50% {
+        scale: .75;
+    }
+
+    100% {
+        scale: 1;
+        rotate: 360deg;
+    }
+}
+
+@keyframes rote360--reverse {
+    0% {
+        scale: 1;
+        rotate: 0;
+    }
+
+    50% {
+        scale: .75;
+    }
+
+    100% {
+        scale: 1;
+        rotate: -360deg;
+    }
+}
+
 /* HEADER */
 
 #header {
@@ -91,6 +149,12 @@
 .header__burgerMenu {
     justify-self: flex-end;
     cursor: pointer;
+}
+
+.header__burgerMenu {
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: forwards;
 }
 
 
@@ -177,6 +241,13 @@
         color: var(--darkColor);
         border-radius: 10px;
         box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+        scale: 0;
+    }
+
+    .header__nav {
+        animation-duration: .75s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        animation-fill-mode: forwards;
     }
 
     .header__links {

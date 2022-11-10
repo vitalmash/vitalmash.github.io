@@ -105,6 +105,7 @@
     background: transparent;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 @media screen AND (max-width: 1024px) {
