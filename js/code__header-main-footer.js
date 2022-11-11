@@ -97,9 +97,27 @@ function clickBurgerMenu() {
     header__burgerMenu.style = `
         animation-name: rote360${countNumber%2 == 0 ? '' : '--reverse'};
     `;
+    main.classList.toggle("main--modal");
     checkBurgerMenu();
     switchStart = true;
     countNumber++;
+}
+
+function addEventOnIndicator() {
+    for (let i=0; i < header__links.childElementCount; i++) {
+        if (i == index) {
+            linkContent[i].addEventListener('mouseover', (e)=>{
+                header__indicator.classList.add(`header__indicator--index${i}`)
+            });
+            linkContent[i].addEventListener('mouseout', (e)=>{
+                header__indicator.classList.remove(`header__indicator--index${i}`)
+            });
+            barindicator[i].classList.add("indicator--active")
+        }
+        else {
+            barindicator[i].classList.remove("indicator--active")
+        }
+    }
 }
 
 function changeOnIndicator(type) {
@@ -130,6 +148,12 @@ function changeOnIndicator(type) {
     } else if (type == 'tablet' && type != auxtype) {
         for (let i=0; i < header__links.childElementCount; i++) {
             if (i == index) {
+                linkContent[i].addEventListener('mouseover', (e)=>{
+                    header__indicator.classList.add(`header__indicator--index${i}`)
+                });
+                linkContent[i].addEventListener('mouseout', (e)=>{
+                    header__indicator.classList.remove(`header__indicator--index${i}`)
+                });
                 barindicator[i].classList.add("indicator--active")
             }
             else {

@@ -153,7 +153,6 @@
     transition: grid-template-columns .5s;
 }
 
-
 .barindicator {
     width: 0;
     height: 100%;
@@ -200,6 +199,11 @@
 #main {
     position: relative;
     top: 75px;
+    transition: opacity .5s;
+}
+
+.main--modal {
+    opacity: .25;
 }
 
 /* FOOTER */
@@ -271,14 +275,17 @@
         display: grid;
         grid-template-columns: 4px 1fr;
         grid-template-rows: min-content;
-        height: auto;
-        background-color: var(--lightColor20);
+        height: 240px;
+        width: 225px;
         font-family: 'Raleway';
         font-weight: 500;
         color: var(--darkColor);
+        background-color: var(--lightColor20);
         border-radius: 10px;
         box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
         scale: 0;
+        overflow: hidden;
+        transition: width .5s;
     }
 
     .header__nav {
@@ -288,24 +295,31 @@
     }
 
     .header__links {
+        position: relative;
+        left: -4px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         order: 2;
-        gap: 15px;
-        padding: 25px;
-        padding-left: 21px;
-        margin-top: 0;
+    }
+
+    .link-content {
+        width: calc(100% + 4px);
+        padding: 20px;
+        padding-left: 24px;
     }
     
     .header__indicator {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 20px);
-        gap: 15px;
+        grid-template-rows: 20px 20px 20px 20px;
+        align-content: center;
+        gap: 40px;
         order: 1;
-        padding: 25px 0;
+        height: 100%;
+        transition: grid-template-rows .5s;
     }
+
     
     .barindicator {
         width: 100%;
@@ -319,6 +333,27 @@
         background: var(--lightColor);
         transition: height .5s;
     }
+    
+    .header__indicator--index0 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 20px 20px 20px;
+    }
+    
+    .header__indicator--index1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 60px 20px 20px;
+    }
+    
+    .header__indicator--index2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 20px 60px 20px;
+    }
+    
+    .header__indicator--index3 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 20px 20px 60px;
+    }
+
     /* FOOTER */
     
     #footer {
@@ -335,7 +370,9 @@
 
     /* HEADER */
     .header__nav { 
-        grid-template-columns: 4px calc(100vw - 50px);
+        right: 7vw;
+        grid-template-columns: 4px 1fr;
+        width: calc(86vw);
     }
 
     /* FOOTER */
