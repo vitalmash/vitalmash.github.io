@@ -103,34 +103,41 @@ function clickBurgerMenu() {
 }
 
 function changeOnIndicator(type) {
-    let index, arrayGridColumns = [], arrayGridRows = [];
+    let index;
     if (window.location.pathname == '/index.html' || window.location.pathname == '/') index = 0;
     else if (window.location.pathname == '/producto/index.html') index = 1;
     else if (window.location.pathname == '/blog/index.html') index = 2;
-    else index = 3;
+    else if (window.location.pathname == '/contacto/index.html') index = 3;
+    else index = 0;
 
     if (type == 'laptop' && type != auxtype) {
         for (let i=0; i < header__links.childElementCount; i++) {
-            // arrayGridColumns[i] = `${linkContent[i].clientWidth}px`;
-            if (i == index) {barindicator[i].classList.add("indicator--active")}
-            else {barindicator[i].classList.remove("indicator--active")}
+            if (i == index) {
+                linkContent[i].addEventListener('mouseover', (e)=>{
+                    header__indicator.classList.add(`header__indicator--index${i}`)
+                });
+                linkContent[i].addEventListener('mouseout', (e)=>{
+                    header__indicator.classList.remove(`header__indicator--index${i}`)
+                });
+                barindicator[i].classList.add("indicator--active")
+            }
+            else {
+                barindicator[i].classList.remove("indicator--active")
+            }
         }
-        // header__indicator.style = `
-        //     grid-template-columns: ${arrayGridColumns[0]} ${arrayGridColumns[1]} ${arrayGridColumns[2]} ${arrayGridColumns[3]};
-        //     `;
-
         auxtype = type;
+
     } else if (type == 'tablet' && type != auxtype) {
         for (let i=0; i < header__links.childElementCount; i++) {
-            // arrayGridRows[i] = `${linkContent[i].clientHeight}px`;
-            if (i == index) {barindicator[i].classList.add("indicator--active")}
-            else {barindicator[i].classList.remove("indicator--active")}
+            if (i == index) {
+                barindicator[i].classList.add("indicator--active")
+            }
+            else {
+                barindicator[i].classList.remove("indicator--active")
+            }
         }
-        // header__indicator.style = `
-        //     grid-template-rows: ${arrayGridRows[0]} ${arrayGridRows[1]} ${arrayGridRows[2]} ${arrayGridRows[3]};
-        //     `;
-
         auxtype = type;
+
     }
 }
 
