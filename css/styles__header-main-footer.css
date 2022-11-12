@@ -46,7 +46,7 @@
     }
 }
 
-@keyframes rote360 {
+@keyframes rotate360 {
     0% {
         scale: 1;
         rotate: 0;
@@ -62,7 +62,7 @@
     }
 }
 
-@keyframes rote360--reverse {
+@keyframes rotate360--reverse {
     0% {
         scale: 1;
         rotate: 0;
@@ -96,6 +96,7 @@
     font-weight: 500;
     color: var(--darkColor);
 }
+
 .header__logoName {
     display: flex;
     justify-content: center;
@@ -153,19 +154,6 @@
     transition: grid-template-columns .5s;
 }
 
-.barindicator {
-    width: 0;
-    height: 100%;
-    background: transparent;
-}
-
-.indicator--active {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    background: var(--lightColor);
-    transition: width .5s;
-}
-
 .header__indicator--index0 {
     grid-template-columns: calc(75px + 7%) 113px 71px 104px;
 }
@@ -182,17 +170,37 @@
     grid-template-columns: 75px 113px 71px calc(104px + 7%);
 }
 
+.barindicator {
+    width: 0;
+    height: 100%;
+    background: transparent;
+}
+
+.indicator--active {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    background: var(--lightColor);
+    transition: width .5s;
+}
+
 .header__burgerMenu {
     justify-self: flex-end;
     cursor: pointer;
 }
 
-.header__burgerMenu {
+.header__burgerMenu--rotate360 {
+    animation-name: rotate360;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: forwards;
 }
 
+.header__burgerMenu--rotate360-rvrs {
+    animation-name: rotate360--reverse;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: forwards;
+}
 
 /* MAIN */
 
@@ -288,7 +296,15 @@
         transition: width .5s;
     }
 
-    .header__nav {
+    .header__nav--swipeCenter {
+        animation-name: swipeCenter;
+        animation-duration: .75s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        animation-fill-mode: forwards;
+    }
+    
+    .header__nav--swipeCenter-rvrs {
+        animation-name: swipeCenter--reverse;
         animation-duration: .75s;
         animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
         animation-fill-mode: forwards;
@@ -320,20 +336,6 @@
         transition: grid-template-rows .5s;
     }
 
-    
-    .barindicator {
-        width: 100%;
-        height: 0;
-        background: transparent;
-    }
-    
-    .indicator--active {
-        height: 100%;
-        border-radius: 0 5px 5px 0;
-        background: var(--lightColor);
-        transition: height .5s;
-    }
-    
     .header__indicator--index0 {
         grid-template-columns: 1fr;
         grid-template-rows: 60px 20px 20px 20px;
@@ -352,6 +354,19 @@
     .header__indicator--index3 {
         grid-template-columns: 1fr;
         grid-template-rows: 20px 20px 20px 60px;
+    }
+
+    .barindicator {
+        width: 100%;
+        height: 0;
+        background: transparent;
+    }
+    
+    .indicator--active {
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+        background: var(--lightColor);
+        transition: height .5s;
     }
 
     /* FOOTER */

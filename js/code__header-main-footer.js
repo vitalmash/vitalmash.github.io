@@ -31,7 +31,6 @@ window.addEventListener('scroll', ()=> {
     }
 });
 
-
 header__burgerMenu.addEventListener('click', ()=> {
     clickBurgerMenu();
 });
@@ -42,7 +41,9 @@ main.addEventListener('click', ()=> {
     }
 });
 
+
 function changeOnresizeOnload() {
+    checkMainModal();
     changeOnHeader();
     changeOnFooter();
     //
@@ -52,7 +53,6 @@ function changeOnresizeOnload() {
 }
 
 //
-
 function changeContentSection() {
     if (window.innerWidth <= 1024) {
         if (contentSection[1].childElementCount == 2) {
@@ -64,19 +64,19 @@ function changeContentSection() {
         }
     }
 }
-
 //
 
 function changeOnHeader() {
     if (window.innerWidth <= 768) {
-        checkBurgerMenu();
         if (!header.contains(header__burgerMenu)) {
             header.replaceChild(header__burgerMenu, header__nav);
             document.body.insertBefore(header__nav, main);
             changeOnIndicator('tablet');
+        } else if (header__burgerMenu.firstChild.classList.contains("fi-br-x")){
+            header__nav.classList.add("header__nav--swipeCenter");
+            header__nav.classList.remove("header__nav--swipeCenter-rvrs");
         }
     } else if (header.contains(header__burgerMenu)) {
-        header__nav.style = `animation-name: swipeCenter;`;
         header.replaceChild(header__nav,header__burgerMenu);
         changeOnIndicator('laptop');
     } else {
@@ -86,21 +86,31 @@ function changeOnHeader() {
 
 function checkBurgerMenu() {
     if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
-        header__nav.style = `animation-name: swipeCenter;`;
+        header__nav.classList.add("header__nav--swipeCenter");
+        header__nav.classList.remove("header__nav--swipeCenter-rvrs");
     } else if (switchStart) {
-        header__nav.style = `animation-name: swipeCenter--reverse;`;
+        header__nav.classList.add("header__nav--swipeCenter-rvrs");
+        header__nav.classList.remove("header__nav--swipeCenter");
     }
 }
 
 function clickBurgerMenu() {
     header__burgerMenu.firstChild.classList.toggle("fi-br-x");
-    header__burgerMenu.style = `
-        animation-name: rote360${countNumber%2 == 0 ? '' : '--reverse'};
-    `;
+    header__burgerMenu.classList = `header__burgerMenu header__burgerMenu--rotate360${countNumber%2 == 0 ? '' : '-rvrs'}`;
     main.classList.toggle("main--modal");
     checkBurgerMenu();
     switchStart = true;
     countNumber++;
+}
+
+function checkMainModal() {
+    if (window.innerWidth > 768) {
+        header__nav.classList.remove("header__nav--swipeCenter");
+        header__nav.classList.remove("header__nav--swipeCenter-rvrs");
+        main.classList.remove("main--modal");
+    } else if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
+        main.classList.add("main--modal");
+    }
 }
 
 function addEventOnIndicator() {
