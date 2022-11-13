@@ -13,7 +13,6 @@ const footer__divline = document.querySelector(".footer__divline");
 const contentSection = document.querySelectorAll(".content-section");
 const CS__picture = document.querySelectorAll(".content-section__picture");
 const CS__nutrition = document.querySelector(".content-nutrition");
-
 //
 
 
@@ -31,15 +30,16 @@ window.addEventListener('scroll', ()=> {
     }
 });
 
-header__burgerMenu.addEventListener('click', ()=> {
-    clickBurgerMenu();
-});
-
 main.addEventListener('click', ()=> {
     if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
         clickBurgerMenu();
     }
 });
+
+header__burgerMenu.addEventListener('click', ()=> {
+    clickBurgerMenu();
+});
+
 
 
 function changeOnresizeOnload() {
@@ -73,8 +73,8 @@ function changeOnHeader() {
             document.body.insertBefore(header__nav, main);
             changeOnIndicator('tablet');
         } else if (header__burgerMenu.firstChild.classList.contains("fi-br-x")){
-            header__nav.classList.add("header__nav--swipeCenter");
-            header__nav.classList.remove("header__nav--swipeCenter-rvrs");
+            header__nav.classList.add("swipeCenter");
+            header__nav.classList.remove("swipeCenter-rvrs");
         }
     } else if (header.contains(header__burgerMenu)) {
         header.replaceChild(header__nav,header__burgerMenu);
@@ -86,17 +86,17 @@ function changeOnHeader() {
 
 function checkBurgerMenu() {
     if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
-        header__nav.classList.add("header__nav--swipeCenter");
-        header__nav.classList.remove("header__nav--swipeCenter-rvrs");
+        header__nav.classList.add("swipeCenter");
+        header__nav.classList.remove("swipeCenter-rvrs");
     } else if (switchStart) {
-        header__nav.classList.add("header__nav--swipeCenter-rvrs");
-        header__nav.classList.remove("header__nav--swipeCenter");
+        header__nav.classList.add("swipeCenter-rvrs");
+        header__nav.classList.remove("swipeCenter");
     }
 }
 
 function clickBurgerMenu() {
     header__burgerMenu.firstChild.classList.toggle("fi-br-x");
-    header__burgerMenu.classList = `header__burgerMenu header__burgerMenu--rotate360${countNumber%2 == 0 ? '' : '-rvrs'}`;
+    header__burgerMenu.classList = `header__burgerMenu rotate360${countNumber%2 == 0 ? '' : '-rvrs'}`;
     main.classList.toggle("main--modal");
     checkBurgerMenu();
     switchStart = true;
@@ -105,8 +105,8 @@ function clickBurgerMenu() {
 
 function checkMainModal() {
     if (window.innerWidth > 768) {
-        header__nav.classList.remove("header__nav--swipeCenter");
-        header__nav.classList.remove("header__nav--swipeCenter-rvrs");
+        header__nav.classList.remove("swipeCenter");
+        header__nav.classList.remove("swipeCenter-rvrs");
         main.classList.remove("main--modal");
     } else if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
         main.classList.add("main--modal");

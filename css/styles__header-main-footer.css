@@ -188,14 +188,14 @@
     cursor: pointer;
 }
 
-.header__burgerMenu--rotate360 {
+.rotate360 {
     animation-name: rotate360;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: forwards;
 }
 
-.header__burgerMenu--rotate360-rvrs {
+.rotate360-rvrs {
     animation-name: rotate360--reverse;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
@@ -296,14 +296,14 @@
         transition: width .5s;
     }
 
-    .header__nav--swipeCenter {
+    .swipeCenter {
         animation-name: swipeCenter;
         animation-duration: .75s;
         animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
         animation-fill-mode: forwards;
     }
     
-    .header__nav--swipeCenter-rvrs {
+    .swipeCenter-rvrs {
         animation-name: swipeCenter--reverse;
         animation-duration: .75s;
         animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
