@@ -25,7 +25,7 @@ changeOnresizeOnload();
 window.onresize = ()=>{changeOnresizeOnload()};
 
 window.addEventListener('scroll', ()=> {
-    if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
+    if (header__burgerMenu.firstChild.classList.contains("fi-br-x") && window.innerWidth <= 1024) {
         clickBurgerMenu();
     }
 });
