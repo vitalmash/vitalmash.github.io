@@ -67,7 +67,7 @@ function changeContentSection() {
 //
 
 function changeOnHeader() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
         if (!header.contains(header__burgerMenu)) {
             header.replaceChild(header__burgerMenu, header__nav);
             document.body.insertBefore(header__nav, main);
@@ -104,7 +104,7 @@ function clickBurgerMenu() {
 }
 
 function checkMainModal() {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
         header__nav.classList.remove("swipeCenter");
         header__nav.classList.remove("swipeCenter-rvrs");
         main.classList.remove("main--modal");
@@ -134,8 +134,9 @@ function changeOnIndicator(type) {
     let index;
     if (window.location.pathname == '/index.html' || window.location.pathname == '/') index = 0;
     else if (window.location.pathname == '/producto/index.html') index = 1;
-    else if (window.location.pathname == '/blog/index.html') index = 2;
-    else if (window.location.pathname == '/contacto/index.html') index = 3;
+    else if (window.location.pathname == '/carrito/index.html') index = 2;
+    else if (window.location.pathname == '/blog/index.html') index = 3;
+    else if (window.location.pathname == '/contacto/index.html') index = 4;
     else index = 0;
 
     if (type == 'laptop' && type != auxtype) {

@@ -144,7 +144,7 @@
     position: relative;
     z-index: 1100;
     display: grid;
-    grid-template-columns: 75px 113px 71px 104px;
+    grid-template-columns: 75px 113px 86px 71px 104px;
     grid-template-rows: 4px;
     justify-content: center;
     justify-items: center;
@@ -155,19 +155,23 @@
 }
 
 .header__indicator--index0 {
-    grid-template-columns: calc(75px + 7%) 113px 71px 104px;
+    grid-template-columns: calc(75px + 7%) 113px 86px 71px 104px;
 }
 
 .header__indicator--index1 {
-    grid-template-columns: 75px calc(113px + 7%) 71px 104px;
+    grid-template-columns: 75px calc(113px + 7%) 86px 71px 104px;
 }
 
 .header__indicator--index2 {
-    grid-template-columns: 75px 113px calc(71px + 7%) 104px;
+    grid-template-columns: 75px 113px calc(86px + 7%) 71px 104px;
 }
 
 .header__indicator--index3 {
-    grid-template-columns: 75px 113px 71px calc(104px + 7%);
+    grid-template-columns: 75px 113px 86px calc(71px + 7%) 104px;
+}
+
+.header__indicator--index4 {
+    grid-template-columns: 75px 113px 86px 71px calc(104px + 7%);
 }
 
 .barindicator {
@@ -267,7 +271,7 @@
     gap: 12.5px;
 }
 
-@media screen AND (max-width: 768px) {
+@media screen AND (max-width: 1024px) {
 
     /* HEADER */ 
 
@@ -283,7 +287,7 @@
         display: grid;
         grid-template-columns: 4px 1fr;
         grid-template-rows: min-content;
-        height: 240px;
+        height: 300px;
         width: 225px;
         font-family: 'Raleway';
         font-weight: 500;
@@ -328,7 +332,7 @@
     
     .header__indicator {
         grid-template-columns: 1fr;
-        grid-template-rows: 20px 20px 20px 20px;
+        grid-template-rows: 20px 20px 20px 20px 20px;
         align-content: center;
         gap: 40px;
         order: 1;
@@ -338,22 +342,27 @@
 
     .header__indicator--index0 {
         grid-template-columns: 1fr;
-        grid-template-rows: 60px 20px 20px 20px;
+        grid-template-rows: 60px 20px 20px 20px 20px;
     }
     
     .header__indicator--index1 {
         grid-template-columns: 1fr;
-        grid-template-rows: 20px 60px 20px 20px;
+        grid-template-rows: 20px 60px 20px 20px 20px;
     }
     
     .header__indicator--index2 {
         grid-template-columns: 1fr;
-        grid-template-rows: 20px 20px 60px 20px;
+        grid-template-rows: 20px 20px 60px 20px 20px;
     }
     
     .header__indicator--index3 {
         grid-template-columns: 1fr;
-        grid-template-rows: 20px 20px 20px 60px;
+        grid-template-rows: 20px 20px 20px 60px 20px;
+    }
+
+    .header__indicator--index4 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 20px 20px 20px 60px;
     }
 
     .barindicator {
