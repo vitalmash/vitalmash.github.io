@@ -140,11 +140,31 @@
     color: var(--darkColor);
 }
 
+.link-content__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+
+.cart-shoppinglist {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18.5px;
+    height: 18.5px;
+    border-radius: 18.5px;
+    background: var(--lightColor);
+    color: #FFF;
+    font-size: 9px;
+    font-family: 'Lato';
+}
+
 .header__indicator {
     position: relative;
     z-index: 1100;
     display: grid;
-    grid-template-columns: 75px 113px 86px 71px 104px;
+    grid-template-columns: 75.4px 112.6px 113.5px 70.9px 104.3px;
     grid-template-rows: 4px;
     justify-content: center;
     justify-items: center;
@@ -155,23 +175,23 @@
 }
 
 .header__indicator--index0 {
-    grid-template-columns: calc(75px + 7%) 113px 86px 71px 104px;
+    grid-template-columns: calc(75.4px + 7%) 112.6px 113.5px 70.9px 104.3px;
 }
 
 .header__indicator--index1 {
-    grid-template-columns: 75px calc(113px + 7%) 86px 71px 104px;
+    grid-template-columns: 75.4px calc(112.6px + 7%) 113.5px 70.9px 104.3px;
 }
 
 .header__indicator--index2 {
-    grid-template-columns: 75px 113px calc(86px + 7%) 71px 104px;
+    grid-template-columns: 75.4px 112.6px calc(113.5px + 7%) 70.9px 104.3px;
 }
 
 .header__indicator--index3 {
-    grid-template-columns: 75px 113px 86px calc(71px + 7%) 104px;
+    grid-template-columns: 75.4px 112.6px 113.5px calc(70.9px + 7%) 104.3px;
 }
 
 .header__indicator--index4 {
-    grid-template-columns: 75px 113px 86px 71px calc(104px + 7%);
+    grid-template-columns: 75.4px 112.6px 113.5px 70.9px calc(104.3px + 7%);
 }
 
 .barindicator {
@@ -376,8 +396,11 @@
         border-radius: 0 5px 5px 0;
         background: var(--lightColor);
         transition: height .5s;
-    }
+    }  
 
+}
+
+@media screen AND (max-width: 768px) {
     /* FOOTER */
     
     #footer {
@@ -386,8 +409,6 @@
         gap: 25px;
         padding: 50px 7%;
     }
-    
-
 }
 
 @media screen AND (max-width: 425px) {
