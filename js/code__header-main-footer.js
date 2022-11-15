@@ -31,7 +31,7 @@ window.addEventListener('scroll', ()=> {
 });
 
 main.addEventListener('click', ()=> {
-    if (header__burgerMenu.firstChild.classList.contains("fi-br-x")) {
+    if (header__burgerMenu.firstChild.classList.contains("fi-br-x") && window.innerWidth <= 1024) {
         clickBurgerMenu();
     }
 });
