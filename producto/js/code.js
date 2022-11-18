@@ -2,9 +2,7 @@ const contentSection = document.querySelectorAll(".content-section");
 const CS__picture = document.querySelectorAll(".content-section__picture");
 const CS__nutrition = document.querySelector(".content-nutrition");
 
-changeOnResizeOnLoad();
-window.onresize = ()=>{changeOnResizeOnLoad()};
-function changeOnResizeOnLoad() {
+export function changeOnresizeOnload() {
     changeContentSection();
 }
 

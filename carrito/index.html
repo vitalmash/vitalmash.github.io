@@ -15,7 +15,7 @@
 
     <!--My styles-->
 	<link rel="stylesheet" type="text/css" href="../css/styles__header-main-footer.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
     
 	<!-- My codes -->
 	
@@ -70,8 +70,58 @@
         </nav>
     </header>
     <main id="main">
-        <section class="content-section" style="display: flex; padding: 50px 7%; height: 80vh;">
-            <h1>Estas en la sección de carrito, aun está en desarrollo.</h1>
+        <section class="content-section">
+            <div class="product-view">
+                <div class="product-view__main">
+                    <div class="product-view__filing">
+                        <div class="filing-product__thumbnails">
+                            <div class="thumbnails-product">
+                                <img src="img/bottle_etiqueta--thumbnails0.png" alt="">
+                            </div>
+                            <div class="thumbnails-product">
+                                <img src="img/bottle_etiqueta--thumbnails1.png" alt="">
+                            </div>
+                            <div class="thumbnails-product">
+                                <img src="img/bottle_etiqueta--thumbnails2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="filing-product__picture">
+                            <img src="img/bottle_etiqueta0.png" alt="">
+                        </div>
+                    </div>
+                    <div class="product-view__info">
+                        <div class="info-product__title">Bebidad Probiótica de Kéfir con frutos rojos y mashua negra. Vitalmash - 500g</div>
+                        <div class="info-product__score">
+                            <div class="score-stars">
+                                <div class="score-stars__5-starts"></div>
+                                <div class="score-stars__5-starts"></div>
+                                <div class="score-stars__5-starts"></div>
+                                <div class="score-stars__5-starts"></div>
+                                <div class="score-stars__5-starts"></div>
+                                <div class="score-stars__number">4.8</div>
+                            </div>
+                            <div class="score-divline"></div>
+                            <div class="score-quantity">75 calificaciones</div>
+                        </div>
+                        <div class="info-product__cost"><sup>S/ </sup>5.50</div>
+                        <div class="info-product__description">
+                            <div class="description-title">Descripción:</div>
+                            <div class="description-content">La bebida aporta al cuidado de su salud intestinal y aumenta sus defensas, incluso que es agradable pero libre de octógonos y químicos.</div>
+                        </div>
+                        <div class="info-product__units">
+                            <div class="units-title">Unidades:</div>
+                            <div class="units-content">
+                                <div class="less-button">-</div>
+                                <input class="current-number" type="number" value="3" min="1" max="50">
+                                <div class="more-button">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-view__cart">
+                    <div class="cart-button">Añadir al carrito >></div>
+                </div>
+            </div>
         </section>
     </main>
     <footer id="footer">
@@ -87,6 +137,8 @@
             <i class="fi fi-brands-youtube"></i>
         </div>
     </footer>
-	<script type="text/javascript" src="../js/code__header-main-footer.js"></script>
+	<script type="module" src="../js/code__header-main-footer.js"></script>
+	<script type="module" src="js/code.js"></script>
+    <script type="module" src="../js/module__resize.js"></script>
 </body>
 </html>

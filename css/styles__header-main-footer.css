@@ -349,6 +349,11 @@
         padding: 20px;
         padding-left: 24px;
     }
+
+    .link-content__name {
+        justify-content: space-between;
+        width: 100%;
+    }
     
     .header__indicator {
         grid-template-columns: 1fr;

@@ -9,20 +9,10 @@ const barindicator = document.querySelectorAll(".barindicator");
 const main = document.getElementById("main");
 const footer__divline = document.querySelector(".footer__divline");
 
-//
-const contentSection = document.querySelectorAll(".content-section");
-const CS__picture = document.querySelectorAll(".content-section__picture");
-const CS__nutrition = document.querySelector(".content-nutrition");
-//
-
-
 var auxtype = 'nothing'; // auxtype: para saber el type anterior y no repetir procesos. En f:  changeOnIndicator(type)
 const header__burgerMenu = document.createElement("DIV");
 header__burgerMenu.classList.add("header__burgerMenu");
 header__burgerMenu.innerHTML = `<i class="fi fi-br-menu-burger"></i>`;
-
-changeOnresizeOnload();
-window.onresize = ()=>{changeOnresizeOnload()};
 
 window.addEventListener('scroll', ()=> {
     if (header__burgerMenu.firstChild.classList.contains("fi-br-x") && window.innerWidth <= 1024) {
@@ -40,31 +30,11 @@ header__burgerMenu.addEventListener('click', ()=> {
     clickBurgerMenu();
 });
 
-
-
-function changeOnresizeOnload() {
+export function changeOnresizeOnload() {
     checkMainModal();
     changeOnHeader();
     changeOnFooter();
-    //
-    if (window.location.pathname == '/producto/index.html' || window.location.pathname == '/C:/Users/USUARIO/OneDrive/ESTUDIO/Proyectos/Vitalmash/github/producto/index.html') {
-        changeContentSection();
-    }
 }
-
-//
-function changeContentSection() {
-    if (window.innerWidth <= 1024) {
-        if (contentSection[1].childElementCount == 2) {
-            contentSection[1].removeChild(CS__picture[1]);
-        }  
-    } else {
-        if (!(contentSection[1].childElementCount == 2)) {
-            contentSection[1].insertBefore(CS__picture[1], CS__nutrition);
-        }
-    }
-}
-//
 
 function changeOnHeader() {
     if (window.innerWidth <= 1024) {
@@ -113,7 +83,7 @@ function checkMainModal() {
     }
 }
 
-function addEventOnIndicator() {
+function addEventOnIndicator(index) {
     for (let i=0; i < header__links.childElementCount; i++) {
         if (i == index) {
             linkContent[i].addEventListener('mouseover', (e)=>{
@@ -140,39 +110,11 @@ function changeOnIndicator(type) {
     else index = 0;
 
     if (type == 'laptop' && type != auxtype) {
-        for (let i=0; i < header__links.childElementCount; i++) {
-            if (i == index) {
-                linkContent[i].addEventListener('mouseover', (e)=>{
-                    header__indicator.classList.add(`header__indicator--index${i}`)
-                });
-                linkContent[i].addEventListener('mouseout', (e)=>{
-                    header__indicator.classList.remove(`header__indicator--index${i}`)
-                });
-                barindicator[i].classList.add("indicator--active")
-            }
-            else {
-                barindicator[i].classList.remove("indicator--active")
-            }
-        }
+        addEventOnIndicator(index);
         auxtype = type;
-
     } else if (type == 'tablet' && type != auxtype) {
-        for (let i=0; i < header__links.childElementCount; i++) {
-            if (i == index) {
-                linkContent[i].addEventListener('mouseover', (e)=>{
-                    header__indicator.classList.add(`header__indicator--index${i}`)
-                });
-                linkContent[i].addEventListener('mouseout', (e)=>{
-                    header__indicator.classList.remove(`header__indicator--index${i}`)
-                });
-                barindicator[i].classList.add("indicator--active")
-            }
-            else {
-                barindicator[i].classList.remove("indicator--active")
-            }
-        }
+        addEventOnIndicator(index);
         auxtype = type;
-
     }
 }
 
