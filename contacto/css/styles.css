@@ -83,6 +83,16 @@
     border-radius: 5px;
 }
 
+[type="number"] .form-input {
+    -moz-appearance: textfield;
+}
+
+[type="number"] .form-input::-webkit-inner-spin-button,
+[type="number"] .form-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .form-textarea {
     flex-grow: 2;
     width: 100%;
@@ -92,6 +102,7 @@
     background: var(--middleColor20);
     border-radius: 5px;
     height: 200px;
+    resize: none;
 }
 
 .form-send {
