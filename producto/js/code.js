@@ -6,8 +6,9 @@ export function changeOnresizeOnload() {
     changeContentSection();
 }
 
+
 function changeContentSection() {
-    if (document.documentElement.scrollWidth <=1024) {
+    if (window.innerWidth <=1024) {
         if (contentSection[1].childElementCount == 2) {
             contentSection[1].removeChild(CS__picture[1]);
         }  

@@ -102,11 +102,10 @@ function addEventOnIndicator(index) {
 
 function changeOnIndicator(type) {
     let index;
-    if (window.location.pathname == '/index.html' || window.location.pathname == '/') index = 0;
-    else if (window.location.pathname == '/producto/index.html') index = 1;
-    else if (window.location.pathname == '/carrito/index.html') index = 2;
-    else if (window.location.pathname == '/blog/index.html') index = 3;
-    else if (window.location.pathname == '/contacto/index.html') index = 4;
+    if (window.location.pathname.includes('producto')) index = 1;
+    else if (window.location.pathname.includes('carrito')) index = 2;
+    else if (window.location.pathname.includes('blog')) index = 3;
+    else if (window.location.pathname.includes('contacto')) index = 4;
     else index = 0;
 
     if (type == 'laptop' && type != auxtype) {

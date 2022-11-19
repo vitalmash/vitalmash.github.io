@@ -7,7 +7,8 @@ const IP__title = document.querySelector(".info-product__title");
 const IP__score = document.querySelector(".info-product__score");
 const IP__cost = document.querySelector(".info-product__cost");
 
-if (window.location.pathname == '/carrito/index.html') {
+
+if (window.location.pathname.includes("carrito")) {
     FP__picture.addEventListener('click', ()=>{
         if (FP__thumbnails.classList.contains("moveToDown") && window.innerWidth <= 1024) {
             FP__thumbnails.classList.replace("moveToDown", "moveToUp");
@@ -21,6 +22,7 @@ export function changeOnresizeOnload() {
     changeOnProductView__filing();
 }
 
+
 function changeOnProductView__filing() {
     if (window.innerWidth <= 768) {
         PW__main.insertBefore(IP__title, PW__filing);
@@ -30,4 +32,5 @@ function changeOnProductView__filing() {
         PW__info.insertBefore(IP__score, IP__cost);
     }
 }
+
 

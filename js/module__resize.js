@@ -9,9 +9,9 @@ function corol(){
     // For all
     COROL__HMF();
     // For each pathname
-    if (window.location.pathname == '/producto/index.html' || window.location.pathname == '/C:/Users/USUARIO/OneDrive/ESTUDIO/Proyectos/Vitalmash/github/producto/index.html') {
+    if (window.location.pathname.includes('producto')) {
         COROL__producto();
-    } else if (window.location.pathname == '/carrito/index.html') {
+    } else if (window.location.pathname.includes('carrito')) {
         COROL__carrito();
     }
 }
