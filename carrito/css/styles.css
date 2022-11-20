@@ -186,6 +186,7 @@
 }
 
 .info-product__title {
+    color: var(--darkColor);
     font-family: 'Lato';
     font-size: 32px;
 }
@@ -252,15 +253,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: var(--darkColor);
 }
 
 .description-title,
 .units-title {
+    color: var(--darkColor);
     font-family: 'Lato';
 }
 
 .description-content,
 .units-content {
+    color: var(--darkColor);
     font-family: 'Raleway';
 }
 
@@ -277,29 +281,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--darkColor);
     font-size: 24px;
+    height: 100%;
+    border: 1px solid var(--darkColor40);
     cursor: pointer;
 }
 
 .less-button:hover,
 .more-button:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .less-button {
     border-radius: 5px 0 0 5px;
-    border-right: 1px solid var(--darkColor40);  
+    border-right:none;
+}
+
+.less-button::before {
+    content: "-";
 }
 
 .more-button {
     border-radius: 0 5px 5px 0;
-    border-left: 1px solid var(--darkColor40);  
+    border-left: none;  
+}
+
+.more-button::before {
+    content: "+";
 }
 
 .current-number {
+    height: 100%;
+    color: var(--darkColor);
+    font-family: 'Lato';
     text-align: center;
     outline: none;
-    border: none;
+    border: 1px solid var(--darkColor40);  
     -moz-appearance:textfield;
 }
 

@@ -10,6 +10,9 @@ const IP__score = document.querySelector(".info-product__score");
 const SS__rate = document.querySelectorAll(".score-stars__rate");
 const SS__number = document.querySelector(".score-stars__number");
 const IP__cost = document.querySelector(".info-product__cost");
+const lessBtn = document.querySelector(".less-button");
+const currentNmbr = document.querySelector(".current-number");
+const moreBtn = document.querySelector(".more-button");
 
 
 if (check()) {
@@ -20,20 +23,42 @@ if (check()) {
             FP__thumbnails.classList.add("moveToDown");     
         }
     });
-}
 
-if (check()) {
+    lessBtn.addEventListener('click', ()=> {
+        if (currentNmbr.value > 0) {
+            currentNmbr.value--;
+            if (currentNmbr.value == 0) {
+                lessBtn.style.color = `var(--darkColor40)`;
+            } else {
+                lessBtn.style.color = `var(--darkColor)`;
+            }
+        }
+    });
+
+    moreBtn.addEventListener('click', ()=> {
+        currentNmbr.value++;
+        if (currentNmbr.value > 0) {
+            lessBtn.style.color = `var(--darkColor)`;
+        }
+    });
+
+
+
     for (let i = 0; i < FP__thumbnails.childElementCount ; i++) {
         thumbnailsProduct[i].addEventListener('click', ()=>{
             toggleClassListChild(i, FP__thumbnails, thumbnailsProduct, "thumbnails-product--selected");
             FP__pictureImg.src = `img/bottle_etiqueta${i}.png`;
         });
     }
+
+
+    scoreStart(SS__number.textContent);
+
+
+
+
 }
 
-if (check()) {
-    scoreStart(SS__number.textContent);
-}
 
 function scoreStart(rate) {
     rate--;
@@ -60,6 +85,10 @@ function changeOnProductView__filing() {
         PW__info.insertBefore(IP__title, IP__cost);
         PW__info.insertBefore(IP__score, IP__cost);
     }
+}
+
+function units() {
+
 }
 
 function check(){
