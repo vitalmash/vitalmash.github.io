@@ -7,6 +7,8 @@ const FP__pictureImg = document.querySelector(".filing-product__picture img");
 const PW__info = document.querySelector(".product-view__info");
 const IP__title = document.querySelector(".info-product__title");
 const IP__score = document.querySelector(".info-product__score");
+const SS__rate = document.querySelectorAll(".score-stars__rate");
+const SS__number = document.querySelector(".score-stars__number");
 const IP__cost = document.querySelector(".info-product__cost");
 
 
@@ -26,6 +28,22 @@ if (check()) {
             toggleClassListChild(i, FP__thumbnails, thumbnailsProduct, "thumbnails-product--selected");
             FP__pictureImg.src = `img/bottle_etiqueta${i}.png`;
         });
+    }
+}
+
+if (check()) {
+    scoreStart(SS__number.textContent);
+}
+
+function scoreStart(rate) {
+    rate--;
+    for (let i = 0; i < rate + 1 ; i++) {
+        if (rate < i && rate > i - 1) {
+            SS__rate[i].style.width = '9px';
+            break;
+        } else {
+            SS__rate[i].style.width = '18px';
+        }
     }
 }
 
