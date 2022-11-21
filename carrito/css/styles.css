@@ -196,7 +196,8 @@
     flex-wrap: wrap;
     justify-content: start;
     align-items: center;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 10px;
     font-family: 'Lato';
 }
 

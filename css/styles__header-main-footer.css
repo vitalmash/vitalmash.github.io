@@ -403,6 +403,17 @@
         transition: height .5s;
     }  
 
+    .header__burgerMenu--shop::before {
+        content: "";
+        position: relative;
+        top: -10.5px;
+        left: 19.5px;
+        display: inline-flex;
+        height: 6px;
+        width: 6px;
+        border-radius: 15px;
+        background: var(--lightColor);
+    }
 }
 
 @media screen AND (max-width: 768px) {

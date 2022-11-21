@@ -1,3 +1,7 @@
+// of header
+const cartShopList = document.querySelector(".cart-shoppinglist");
+
+// of index
 const PW__main = document.querySelector(".product-view__main");
 const PW__filing = document.querySelector(".product-view__filing");
 const FP__thumbnails = document.querySelector(".filing-product__thumbnails");
@@ -9,10 +13,12 @@ const IP__title = document.querySelector(".info-product__title");
 const IP__score = document.querySelector(".info-product__score");
 const SS__rate = document.querySelectorAll(".score-stars__rate");
 const SS__number = document.querySelector(".score-stars__number");
+const scoreDivline = document.querySelector(".score-divline");
 const IP__cost = document.querySelector(".info-product__cost");
 const lessBtn = document.querySelector(".less-button");
 const currentNmbr = document.querySelector(".current-number");
 const moreBtn = document.querySelector(".more-button");
+const cartBtn = document.querySelector(".cart-button");
 
 
 if (check()) {
@@ -36,11 +42,24 @@ if (check()) {
     });
 
     moreBtn.addEventListener('click', ()=> {
-        currentNmbr.value++;
+        if(currentNmbr.value < 100) {
+            currentNmbr.value++;
+        }
         if (currentNmbr.value > 0) {
             lessBtn.style.color = `var(--darkColor)`;
         }
     });
+
+    cartBtn.addEventListener('click', ()=> {
+        if (currentNmbr.value > 0 && currentNmbr.value < 100) {
+            cartShopList.textContent = cartShopState(currentNmbr.value);
+            if (window.innerWidth <= 1024) {
+                const header__burgerMenu = document.querySelector(".header__burgerMenu");
+                header__burgerMenu.classList.add("header__burgerMenu--shop");
+            }
+        }
+    });
+    
 
 
 
@@ -72,8 +91,18 @@ function scoreStart(rate) {
     }
 }
 
+function cartShopState(quantity) {
+    if (quantity > 9) {
+        return `9+`;
+    } else {
+        return quantity;
+    }
+}
+
+
 export function changeOnresizeOnload() {
     changeOnProductView__filing();
+    changeOnScoreDivline();
 }
 
 
@@ -87,9 +116,14 @@ function changeOnProductView__filing() {
     }
 }
 
-function units() {
-
+function changeOnScoreDivline() {
+    if (IP__score.clientHeight > 25) {
+        scoreDivline.style.width = `0`;
+    } else {
+        scoreDivline.style.width = `1px`;
+    }
 }
+
 
 function check(){
     return window.location.pathname.includes("carrito")
