@@ -413,6 +413,10 @@
         width: 6px;
         border-radius: 15px;
         background: var(--lightColor);
+        animation-name: swipeCenter;
+        animation-duration: .75s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        animation-fill-mode: forwards;
     }
 }
 

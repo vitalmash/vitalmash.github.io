@@ -52,7 +52,8 @@ if (check()) {
 
     cartBtn.addEventListener('click', ()=> {
         if (currentNmbr.value > 0 && currentNmbr.value < 100) {
-            cartShopList.textContent = cartShopState(currentNmbr.value);
+            addLocalStorge(currentNmbr.value);
+            cartShopList.textContent = cartShopState(localStorage.getItem("quantityShop"));
             if (window.innerWidth <= 1024) {
                 const header__burgerMenu = document.querySelector(".header__burgerMenu");
                 header__burgerMenu.classList.add("header__burgerMenu--shop");
@@ -76,6 +77,10 @@ if (check()) {
 
 
 
+}
+
+function addLocalStorge(quantity) {
+    localStorage.setItem("quantityShop", quantity);
 }
 
 
