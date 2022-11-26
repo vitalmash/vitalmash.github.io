@@ -175,7 +175,7 @@
     }
 
     .content-section__picture--transform-up {
-        transform: translate(20%, 0%) rotate(-7deg);
+        transform: translate(20%, 7%) rotate(-7deg);
     }
 
     .block-nutrition {
