@@ -251,7 +251,8 @@
 }
 
 .info-product__description,
-.info-product__units {
+.info-product__units,
+.info-product__presentation {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -259,15 +260,32 @@
 }
 
 .description-title,
-.units-title {
+.units-title,
+.presentation-title {
     color: var(--darkColor);
     font-family: 'Lato';
 }
 
 .description-content,
-.units-content {
+.units-content,
+.presentation-content {
     color: var(--darkColor);
     font-family: 'Raleway';
+}
+
+.presentation-content__select {
+    height: 50px;
+    width: 155px;
+    border-radius: 5px;
+    border: 1px solid var(--darkColor40);
+    padding: 0 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+.presentation-content__option {
+    display: flex;
+    height: 50px;
 }
 
 .units-content {

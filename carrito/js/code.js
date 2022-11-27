@@ -10,11 +10,13 @@ const FP__picture = document.querySelector(".filing-product__picture");
 const FP__pictureImg = document.querySelector(".filing-product__picture img");
 const PW__info = document.querySelector(".product-view__info");
 const IP__title = document.querySelector(".info-product__title");
+const IP__title_fixed = `Bebida Probiótica de Kéfir con frutos rojos y mashua negra.`;
 const IP__score = document.querySelector(".info-product__score");
 const SS__rate = document.querySelectorAll(".score-stars__rate");
 const SS__number = document.querySelector(".score-stars__number");
 const scoreDivline = document.querySelector(".score-divline");
 const IP__cost = document.querySelector(".info-product__cost");
+const PC__select = document.querySelector(".presentation-content__select");
 const lessBtn = document.querySelector(".less-button");
 const currentNmbr = document.querySelector(".current-number");
 const moreBtn = document.querySelector(".more-button");
@@ -27,6 +29,19 @@ if (check()) {
             FP__thumbnails.classList.replace("moveToDown", "moveToUp");
         } else if (window.innerWidth <= 1024) {
             FP__thumbnails.classList.add("moveToDown");     
+        }
+    });
+
+    PC__select.addEventListener('click', (e)=>{
+        if (PC__select.value == 1) {
+            IP__title.textContent = `${IP__title_fixed} Vitalmash - 500g`;
+            IP__cost.innerHTML = `<sup>S/ </sup>5.00`;
+            console.log("500 g")
+        }
+        if (PC__select.value == 2) {
+            IP__title.textContent = `${IP__title_fixed} Vitalmash - 1Kg`;
+            IP__cost.innerHTML = `<sup>S/ </sup>8.50`;
+            console.log("1 kg")
         }
     });
 
@@ -61,6 +76,7 @@ if (check()) {
         }
     });
     
+
 
 
 
