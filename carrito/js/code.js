@@ -35,12 +35,12 @@ if (check()) {
     PC__select.addEventListener('click', (e)=>{
         if (PC__select.value == 1) {
             IP__title.textContent = `${IP__title_fixed} Vitalmash - 500g`;
-            IP__cost.innerHTML = `<sup>S/ </sup>5.00`;
+            IP__cost.innerHTML = `<sup>S/ </sup>6.00`;
             console.log("500 g")
         }
         if (PC__select.value == 2) {
             IP__title.textContent = `${IP__title_fixed} Vitalmash - 1Kg`;
-            IP__cost.innerHTML = `<sup>S/ </sup>8.50`;
+            IP__cost.innerHTML = `<sup>S/ </sup>10.00`;
             console.log("1 kg")
         }
     });
