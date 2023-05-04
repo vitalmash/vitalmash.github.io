@@ -83,7 +83,13 @@
 
 /* MAIN */
 
-.content-section:first-child {
+.message {
+    background-color: #BDA4B1;
+    padding: 50px 7%;
+    font-family: 'Lato';
+}
+
+.content-section {
     display: flex;
     justify-content: center;
     align-items: center;
